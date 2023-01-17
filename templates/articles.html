@@ -1,15 +1,10 @@
-{% extends 'layout.html' %}
-
-{% block body %}
-<div class="container">
-  <div class="jumbotron text-center">
-    <H1>Articles</H1>
-    <p>Articles by Rich Jones</p>
-  </div>
-</div>
-  <ul class="list-group">
-    {% for article in articles %}
-      <li class="list-group-item">{{ article['title'] }}</li>
-    {% endfor %}
-  </ul>
+{% extends 'layout.html' %} {% block body %}
+<h1>Articles</h1>
+<ul class="list-group">
+  {% for article in articles %}
+  <li class="list-group-item">
+    <a href="article/{{article.id}}">{{article.title}}</a>
+  </li>
+  {% endfor %}
+</ul>
 {% endblock %}
